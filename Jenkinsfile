@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        DOMAIN='apps.shared-na4.na4.openshift.opentlc.com'
+        DOMAIN='apps.ocp4.vanbruggen.lab'
         PRJ="hello-${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
         APP='nodeapp'
     }
