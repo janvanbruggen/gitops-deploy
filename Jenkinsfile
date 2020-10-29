@@ -19,8 +19,8 @@ pipeline {
                         echo("Create project ${env.PRJ}") 
                         openshift.newProject("${env.PRJ}")
                         openshift.withProject("${env.PRJ}") {
-                            echo('Grant to jan.van.bruggen-ingrammicro.com read access to the project')
-                            openshift.raw('policy', 'add-role-to-user', 'view', 'jan.van.bruggen-ingrammicro.com')
+                            echo('Grant to developer read access to the project')
+                            openshift.raw('policy', 'add-role-to-user', 'view', 'developer')
                             echo("Create app ${env.APP}") 
                             openshift.newApp("${env.GIT_URL}#${env.BRANCH_NAME}", "--strategy source", "--name ${env.APP}")
                         }
